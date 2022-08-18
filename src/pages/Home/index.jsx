@@ -2,6 +2,8 @@
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
 import Widget from "../../components/Widget";
+import Chart from "../../components/Chart";
+import Featured from "../../components/Featured";
 
 // Style
 import "./style.scss";
@@ -17,6 +19,10 @@ const Home = () => {
           <Widget type="order" />
           <Widget type="earning" />
           <Widget type="balance" />
+        </div>
+        <div className="charts">
+          <Featured />
+          <Chart />
         </div>
       </div>
     </div>
