@@ -20,7 +20,7 @@ const Featured = () => {
         <MoreVert fontSize="small" />
       </div>
       <div className="bottom">
-        <div className="chart">
+        <div className="chart-circle">
           <CircularProgressbar value={70} text="70%" strokeWidth={5} />
         </div>
         <p className="title">Total sales made today</p>
