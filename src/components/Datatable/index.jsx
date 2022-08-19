@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // Material UI
 import { DataGrid } from "@mui/x-data-grid";
 
@@ -18,7 +20,9 @@ const Datatable = () => {
       width: 200,
       renderCell: () => (
         <div className="cell-actions">
-          <div className="cell-action btn-view">View</div>
+          <Link to="/users/test" style={{ textDecoration: "none" }}>
+            <div className="cell-action btn-view">View</div>
+          </Link>
           <div className="cell-action btn-delete">Delete</div>
         </div>
       ),
@@ -27,6 +31,12 @@ const Datatable = () => {
 
   return (
     <div className="datatable">
+      <div className="datatable-title">
+        Add New User{" "}
+        <Link to="/users/new" className="link">
+          <strong>+</strong> Add New
+        </Link>
+      </div>
       <DataGrid
         rows={rows}
         columns={columns.concat(actionColumn)}

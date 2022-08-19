@@ -1,4 +1,4 @@
-import "./style.scss";
+import { Link } from "react-router-dom";
 
 // Material UI
 import {
@@ -16,11 +16,16 @@ import {
   CreditCard,
 } from "@mui/icons-material";
 
+// Style
+import "./style.scss";
+
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">LiamLe</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">LiamLe</span>
+        </Link>
       </div>
       <hr />
       <div className="center">
@@ -31,14 +36,18 @@ const Sidebar = () => {
             <span>Dashboard</span>
           </li>
           <p className="title">LISTS</p>
-          <li>
-            <PersonOutline className="icon" />
-            <span>Users</span>
-          </li>
-          <li>
-            <Inventory className="icon" />
-            <span>Products</span>
-          </li>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonOutline className="icon" />
+              <span>Users</span>
+            </li>
+          </Link>
+          <Link to="/products" style={{ textDecoration: "none" }}>
+            <li>
+              <Inventory className="icon" />
+              <span>Products</span>
+            </li>
+          </Link>
           <li>
             <CreditCard className="icon" />
             <span>Orders</span>
