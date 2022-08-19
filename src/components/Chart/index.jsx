@@ -20,11 +20,11 @@ const data = [
   { name: "June", Total: 1700 },
 ];
 
-const Chart = () => {
+const Chart = ({ aspect, title }) => {
   return (
     <div className="chart">
-      <div className="title">Last 6 Months (Revenue)</div>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
+      <div className="title">{title}</div>
+      <ResponsiveContainer width="100%" aspect={aspect}>
         <AreaChart
           width={730}
           height={250}
