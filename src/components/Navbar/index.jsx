@@ -1,3 +1,5 @@
+import { useContext } from "react";
+
 // Material UI
 import {
   Search,
@@ -12,7 +14,12 @@ import {
 //  Style
 import "./style.scss";
 
+// Context
+import { DarkModeContext } from "../../context/darkModeContext";
+
 const Navbar = () => {
+  const { dispatch } = useContext(DarkModeContext);
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -26,7 +33,10 @@ const Navbar = () => {
             English
           </div>
           <div className="item">
-            <DarkModeOutlined className="icon" />
+            <DarkModeOutlined
+              className="icon"
+              onClick={() => dispatch({ type: "TOGGLE" })}
+            />
           </div>
           <div className="item">
             <FullscreenExit className="icon" />

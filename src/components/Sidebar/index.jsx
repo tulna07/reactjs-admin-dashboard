@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 
 // Material UI
 import {
@@ -19,7 +20,12 @@ import {
 // Style
 import "./style.scss";
 
+// Context
+import { DarkModeContext } from "../../context/darkModeContext";
+
 const Sidebar = () => {
+  const { dispatch } = useContext(DarkModeContext);
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -90,8 +96,14 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="bottom">
-        <div className="color-option color-option--light"></div>
-        <div className="color-option color-option--dark"></div>
+        <div
+          className="color-option color-option--light"
+          onClick={() => dispatch({ type: "LIGHT" })}
+        ></div>
+        <div
+          className="color-option color-option--dark"
+          onClick={() => dispatch({ type: "DARK" })}
+        ></div>
       </div>
     </div>
   );
