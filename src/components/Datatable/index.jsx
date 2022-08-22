@@ -55,7 +55,6 @@ const Datatable = () => {
         columns={columns.concat(actionColumn)}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        checkboxSelection
       />
     </div>
   );
